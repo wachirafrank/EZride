@@ -159,7 +159,7 @@
 
 
                 <?php
-                    $checkuserratingsql = mysqli_query($conn, "SELECT * from customerid = '$customerid' and driverid = '$driverid' ") or die(mysqli_error($conn));
+                    $checkuserratingsql = mysqli_query($conn, "SELECT * from driverratings where customerid = '$customerid' and driverid = '$driverid' ") or die(mysqli_error($conn));
                     $rowcheckuserrating = mysqli_num_rows($checkuserratingsql);
                     if($rowcheckuserrating > 0):
                         $rowuserrating = mysqli_fetch_assoc($checkuserratingsql);
