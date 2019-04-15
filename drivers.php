@@ -67,39 +67,39 @@
                     ?>
                     <div class="row driver">
                         <div class="col-md-3">
-                            <img src="images/driverphoto/<?php  echo $rowgetdrivers['driverphoto'];?>" widtth="200px height="200px" alt="">
+                            <img src="images/driverphoto/<?php  echo $rowgetdrivers['driverphoto'];?>" width="200px height="200px" alt="">
                         </div>
 
                         <div class="col-md-3">
                             <ul class="list-unstyled user_data">
                                 <li>
                                     <i class="fa fa-user-circle-o user-profile-icon"></i>
-                                    <?php $rowgetdrivers['driverusername']; ?>
+                                    <?php echo $rowgetdrivers['driverusername']; ?>
                                 </li>
 
                                 <li>
                                     <i class="fa fa-envelope user-profile-icon"></i>
-                                    <?php $rowgetdrivers['driveremail']; ?>
+                                    <?php echo $rowgetdrivers['driveremail']; ?>
                                 </li>
 
                                 <li>
                                     <i class="fa fa-male user-profile-icon"></i>
-                                    <?php $rowgetdrivers['drivergender']; ?>
+                                    <?php echo $rowgetdrivers['drivergender']; ?>
                                 </li>
 
                                 <li>
                                     <i class="fa fa-drivers-licence user-profile-icon"></i>
-                                    <?php $rowgetdrivers['driverphoto']; ?>
+                                    <?php echo $rowgetdrivers['driverphoto']; ?>
                                 </li>
                                 
                                 <li>
                                     <i class="fa fa-globe user-profile-icon"></i>
-                                    <?php $rowgetdrivers['driverexperience']; ?> years experience
+                                    <?php  echo $rowgetdrivers['driverexperience']; ?> years experience
                                 </li>   
 
                                 <li>
                                     <i class="fa fa-money user-profile-icon"></i>
-                                    <?php $rowgetdrivers['drivercost'];
+                                    <?php  echo $rowgetdrivers['drivercost'];
                                     $getofficeid = $rowgetdrivers['officeid'];
                                     ?> Per day
                                 </li>
@@ -112,7 +112,7 @@
                                     <?php echo $rowgetoffice['officename']; ?> Office
                                 </li>
                             </ul>
-                        </div>
+                        </div> <!-- col/md-3-->
 
                         <div class="col-md-3">
                             <?php
@@ -155,9 +155,9 @@
                     ?>
                     </div>
 
+                
 
-
-
+                <div class="col-md-3">
                 <?php
                     $checkuserratingsql = mysqli_query($conn, "SELECT * from driverratings where customerid = '$customerid' and driverid = '$driverid' ") or die(mysqli_error($conn));
                     $rowcheckuserrating = mysqli_num_rows($checkuserratingsql);
